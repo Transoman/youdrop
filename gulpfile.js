@@ -35,6 +35,7 @@ gulp.task('browser-sync', function() {
 
 gulp.task('html', function() {
   gulp.src('app/*.{html,php}')
+    .pipe(gp.plumber())
     .pipe(gp.rigger())
     .pipe(gulp.dest('build'))
     .pipe(browserSync.stream());

@@ -3,13 +3,15 @@
 
     <div class="header__wrap">
 
-      <button class="nav-toggle">
-        <span class="nav-toggle__line"></span>
-      </button>
-
       <nav class="nav header__nav">
+        <button class="nav-toggle">
+          <svg>
+            <use xlink:href="img/icon/symbols.svg#icon-list"></use>
+          </svg>
+        </button>
+
         <ul class="nav-list">
-          <li class="nav-list__roulette"><a href="#">Рулетка</a></li>
+          <li class="active"><a href="#">Рулетка</a></li>
           <li><a href="#">Торговая площадка</a></li>
           <li><a href="#">Кейсы</a></li>
         </ul>
@@ -19,11 +21,14 @@
         <img src="img/logo.png" alt="Your Drop">
       </a>
 
-      <div class="user-menu header__user-menu">
-        <a href="#">Live-Обмены</a>
-
-        <a href="#" class="btn btn--white">Вход через STEAM</a>
-      </div>
+      <ul class="user-menu header__user-menu">
+        <li>
+          <a href="#">Live-Обмены</a>
+        </li>
+        <li>
+          <a href="#" class="btn btn--white">Вход через STEAM</a>
+        </li>
+      </ul>
 
     </div>
 

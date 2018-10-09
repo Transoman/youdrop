@@ -1,72 +1,99 @@
 /* Clearfix for float elements */
 .clearfix:before,
 .clearfix:after
-	content: ''
-	display: table
+  content: ''
+  display: table
 
 .clearfix:after 
-	clear: both
+  clear: both
 
 .clearfix
-	zoom: 1 /* For IE 6/7 hasLayout */
+  zoom: 1 /* For IE 6/7 hasLayout */
 
 
 /* Common styles */
+html
+  overflow-x: hidden
+  height: 100%
+
 body
-	margin: 0
-	padding: 0
-	min-width: 320px
-	font-family: $main-font
-	font-size: 14px
-	line-height: 1.6
-	color: $main-color
-	background-color: $thunder
+  margin: 0
+  padding: 0
+  min-width: 320px
+  font-family: $main-font
+  font-size: 14px
+  line-height: 1.6
+  color: $main-color
+  background:
+    color: $thunder
+    image: url('../img/bg.png')
+    repeat: no-repeat
+    size: cover
+    position: center top
+  b
+  overflow-x: hidden
 
 img
-	max-width: 100%
-	height: auto
+  max-width: 100%
+  height: auto
 
 a
-	text-decoration: none
-	&:hover, &:focus
-		outline: none
-		text-decoration: none
+  color: #fff
+  text-decoration: none
+  +transition
+  &:hover, &:focus
+    color: $accent
+    outline: none
+    text-decoration: none
 
 /* Hidden element */
 .visually-hidden
-	position: absolute
-	width: 1px
-	height: 1px
-	margin: -1px
-	padding: 0
-	border: 0
-	clip: rect(0 0 0 0)
-	overflow: hidden
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  border: 0
+  clip: rect(0 0 0 0)
+  overflow: hidden
 
 /* Buttons */
 .btn
-	display: inline-block
-	vertical-align: middle
-	padding: 10px 15px
-	font-family: $main-font
-	font-size: 16px
-	font-weight: 700
-	color: #fff
-	text-align: center
-	background-color: $accent
-	border: 0
-	outline: none
-	text-decoration: none
-	cursor: pointer
-	user-select: none
-	transition: all .25s ease
-	text-transform: uppercase
-	&:hover
-		background-color: lighten($accent, 5%)
-	&:active
-		background-color: darken($accent, 5%)
-		color: rgba(255,255,255,.3)
-	&[disabled]
-		background-color: #e5e5e5
-		cursor: not-allowed
-		color: #fff
+  display: inline-block
+  vertical-align: middle
+  padding: 19px 30px
+  font-family: $main-font
+  font-size: 14px
+  font-weight: 600
+  color: #fff
+  text-align: center
+  background: $paprika
+  background-image: linear-gradient($crimson, $paprika)
+  border: 0
+  border-radius: 30px
+  outline: none
+  text-decoration: none
+  cursor: pointer
+  user-select: none
+  box-shadow: inset 0 -3px 3px rgba(#000, 0.3), 0 4px 30px rgba($torch-red, 0.7)
+  &:hover
+    color: #fff
+    background-image: linear-gradient(lighten($crimson, 5%), $paprika)
+  &:focus
+    color: #fff
+    background: $paprika
+  &[disabled]
+    background-color: #e5e5e5
+    cursor: not-allowed
+    color: #fff
+  &--white
+    padding-top: 14px
+    padding-bottom: 14px
+    background-color: #fff
+    background-image: none
+    color: $mine-shaft
+    box-shadow: 0 4px 16px rgba(#fff, 0.3)
+    &:hover, &:focus
+      background-image: none
+      background-color: darken(#fff, 5%)
+      color: $mine-shaft
