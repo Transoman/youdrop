@@ -1,0 +1,53 @@
+.footer
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  padding: 35px 0 20px
+  border-top: 1px solid rgba($golden-dream, 0.1)
+  z-index: 10
+  &__wrap
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-bottom: 40px
+  &__left
+    margin-right: 20px
+  &__title
+    font-family: $century
+    font-size: 24px
+    font-weight: 700
+    color: $golden-dream
+  &__desc
+    margin: 0
+    font-family: $century
+    color: $titan-white
+  &__bottom
+    position: relative
+    padding-top: 30px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      margin: 0 auto
+      +size(60%, 1px)
+      background-color: rgba(#fff, 0.04)
+
++media-breakpoint-down(md)
+  .footer
+    &__title
+      font-size: 18px
+    &__desc
+      font-size: 12px
+
++media-breakpoint-down(sm)
+  .footer
+    position: static
+    &__wrap
+      flex-direction: column
+      text-align: center
+    &__left
+      margin: 0
+      margin-bottom: 20px

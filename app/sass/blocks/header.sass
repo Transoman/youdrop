@@ -8,3 +8,21 @@
     display: flex
     justify-content: space-between
     align-items: center
+
++media-breakpoint-down(lg)
+  .header
+    &__logo
+      img
+        width: 200px
+
++media-breakpoint-down(md)
+  .header
+    &__nav
+      padding: 0
+    &__logo
+      margin-left: 40px
+
++media-breakpoint-down(sm)
+  .header
+    &__wrap
+      justify-content: center

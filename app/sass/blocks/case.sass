@@ -1,0 +1,144 @@
+.case
+  &__item
+    position: relative
+    &:nth-child(3n)
+      .case
+        &__inner
+          &::after
+            display: none
+    &:nth-last-child(-n + 3)
+      .case
+        &__inner
+          &::before
+            display: none
+    &:nth-child(-n + 3)
+      .case
+        &__inner
+          padding-top: 0
+    &:hover
+      .case
+        &__img-wrap
+          transform: scale(1.15)
+        &__price
+          color: $golden-dream
+  &__inner
+    display: block
+    padding-top: 105px
+    padding-bottom: 75px
+    text-align: center
+    &::after
+      content: ''
+      position: absolute
+      right: 0
+      top: 60px
+      +size(1px, 270px)
+      background-color: rgba(#fff, 0.05)
+    &::before
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 50%
+      +size(45%, 1px)
+      transform: translateX(-50%)
+      background-color: rgba(#fff, 0.05)
+    h3
+      margin-bottom: 15px
+      font-family: $century
+      font-size: 30px
+      font-weight: 400
+  &__img-wrap
+    position: relative
+    margin-bottom: 65px
+    +transition
+    &::after
+      content: ''
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+      +size(280px, 170px)
+      background: url('../img/content/line.png') no-repeat center
+  &__price
+    margin: 0
+    font-size: 21px
+    font-weight: 900
+    color: $scorpion
+    text-transform: uppercase
+    +transition
+    span
+      font-size: 30px
+
++media-breakpoint-down(md)
+  .case
+    &__item
+      &:nth-child(3n)
+        .case
+          &__inner
+            &::after
+              display: block
+      &:nth-child(2n)
+        .case
+          &__inner
+            &::after
+              display: none
+      &:nth-child(-n + 3)
+        .case
+          &__inner
+            padding-top: 40px
+      &:nth-child(-n + 2)
+        .case
+          &__inner
+            padding-top: 0
+      &:nth-last-child(-n + 3)
+        .case
+          &__inner
+            &::before
+              display: block
+      &:nth-last-child(-n + 2)
+        .case
+          &__inner
+            &::before
+              display: none
+    &__inner
+      padding-top: 40px
+      padding-bottom: 40px
+      h3
+        font-size: 24px
+    &__img-wrap
+      margin-bottom: 45px
+
++media-breakpoint-down(sm)
+  .case
+    &__item
+      &:nth-child(3n)
+        .case
+          &__inner
+            &::after
+              display: none
+      &:nth-child(-n + 2)
+        .case
+          &__inner
+            padding-top: 40px
+      &:first-child
+        .case
+          &__inner
+            padding-top: 0
+      &:nth-last-child(-n + 3)
+        .case
+          &__inner
+            &::before
+              display: block
+      &:last-child
+        .case
+          &__inner
+            &::before
+              display: none
+    &__inner
+      &::after
+        display: none
+
++media-breakpoint-down(xs)
+  .case
+    &__inner
+      h3
+        font-size: 20px

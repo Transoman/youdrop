@@ -2,6 +2,39 @@
   position: relative
   display: flex
   align-items: center
+  padding-left: 60px
+  &__user-menu
+    display: none
+  &__close
+    display: none
+    position: absolute
+    left: 20px
+    top: 20px
+    width: 25px
+    height: 25px
+    background: none
+    padding: 0
+    border: 0
+    outline: none
+    cursor: pointer
+    &:focus
+      outline: none
+    &::after, &::before
+      content: ''
+      position: absolute
+      left: 0
+      display: block
+      height: 2px
+      width: 100%
+      background-color: $accent
+      +transition
+    &::before
+      transform: rotate(45deg)
+    &::after
+      transform: rotate(-45deg)
+    &:hover, &:focus
+      &::before, &::after
+        background-color: $crimson
 
 .nav-list
   margin: 0
@@ -20,22 +53,20 @@
         top: 4px
         +size(13px)
         background: url('../img/icon/icon-dot.svg') no-repeat center
-  a
 
 .nav-toggle
   // display: none
-  // position: absolute
-  // left: 0
-  // top: 17px
+  position: absolute
+  left: 0
+  top: 50%
   width: 20px
   height: 22px
   padding: 0
   margin: 0
-  margin-right: 40px
+  margin-top: -13px
   outline: none
   border: none
   background: none
-  z-index: 101
   cursor: pointer
   +transition
   svg
@@ -73,3 +104,46 @@
   //     &::before
   //       top: 0
   //       transform: rotate(-45deg)
+
++media-breakpoint-down(lg)
+  .nav
+    padding-left: 40px
+  .nav-list
+    li
+      margin-right: 20px
+
++media-breakpoint-down(md)
+  .nav
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    width: 320px
+    background-color: rgba($thunder, 0.95)
+    flex-direction: column
+    align-items: stretch
+    padding: 70px 20px 20px
+    +transition
+    transform: translateX(-100%)
+    &.open
+      transform: translateX(0)
+    &__user-menu
+      display: flex
+      flex-direction: column
+      align-items: stretch
+      li
+        margin: 0
+        margin-bottom: 10px
+    &__close
+      display: block
+
+  .nav-list
+    flex-direction: column
+    li
+      margin-right: 0
+      margin-bottom: 10px
+
++media-breakpoint-down(sm)
+  .nav
+    &__user-menu
+      display: block

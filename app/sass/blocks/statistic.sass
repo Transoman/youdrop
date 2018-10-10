@@ -9,9 +9,32 @@
     &:last-child
       border: 0
     b
+      display: block
+      margin-bottom: 5px
       font-size: 48px
       font-weight: 700
       color: $golden-dream
+      white-space: nowrap
       text-shadow: 5px 0 30px rgba($golden-dream, 0.5)
     p
+      margin: 0
       font-weight: 300
+
++media-breakpoint-down(sm)
+  .statistic
+    &__item
+      padding: 0 30px
+      b
+        font-size: 30px
+
++media-breakpoint-down(xs)
+  .statistic
+    flex-direction: column
+    &__item
+      padding: 0
+      border: 0
+      margin-bottom: 15px
+      b
+        line-height: 1
+      &:last-child
+        margin-bottom: 0

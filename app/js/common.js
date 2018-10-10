@@ -3,9 +3,13 @@ jQuery(document).ready(function($) {
   // Toggle nav menu
   $('.nav-toggle').on('click', function (e) {
     e.preventDefault();
-    $(this).toggleClass('active');
     $('.header__nav').toggleClass('open');
   });
+
+  $('.nav__close').click(function(e) {
+    e.preventDefault();
+    $('.header__nav').removeClass('open');
+  })
 
   // Modal
   $('.modal').popup({
@@ -13,6 +17,10 @@ jQuery(document).ready(function($) {
     onclose: function() {
       $(this).find('label.error').remove();
     }
+  });
+
+  $('a[href=#]').click(function(e) {
+    e.preventDefault();
   });
 
 });

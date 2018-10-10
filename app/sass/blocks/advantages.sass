@@ -1,0 +1,50 @@
+.advantages
+  padding-top: 115px
+  padding-bottom: 230px
+  background: url('../img/advantages-bg.png') no-repeat center bottom / cover
+  &__item
+    margin-bottom: 50px
+  &__inner
+    position: relative
+    padding: 105px 25px 0
+    text-align: center
+    color: $titan-white
+    h3
+      margin: 0
+      font-size: 16px
+      font-weight: 600
+      text-transform: uppercase
+      &::after
+        content: ''
+        display: block
+        margin: 10px auto 20px
+        +size(50px, 2px)
+        background-color: #fff
+    p
+      margin: 0
+      font-family: $century
+      line-height: 1.7
+  &__icon-wrap
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    img
+      filter: drop-shadow(0 0 25px rgba($golden-dream, 1));
+
++media-breakpoint-down(lg)
+  .advantages
+    &__inner
+      padding-right: 0
+      padding-left: 0
+
++media-breakpoint-down(sm)
+  .advantages
+    padding-bottom: 40px
+    &__item
+      &:last-child
+        margin-bottom: 0
+    &__inner
+      p
+        padding-right: 90px
+        padding-left: 90px
