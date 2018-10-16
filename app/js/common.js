@@ -19,8 +19,28 @@ jQuery(document).ready(function($) {
     }
   });
 
-  $('a[href=#]').click(function(e) {
-    e.preventDefault();
+  // $('a[href=#"]').click(function(e) {
+  //   e.preventDefault();
+  // });
+
+  $('.drophistory__item').mouseover(function(e){
+    var offset = $(this).offset().left - 25;
+    // console.log();
+
+    if (offset + 250 > $(window).innerWidth()) {
+      offset = $(window).innerWidth() - 205;
+    }
+    else if (offset < 45) {
+      offset = 10
+    }
+
+    $('.drophistory-hover').css({
+      left: offset
+    }).removeClass('hidden');
+  });
+
+  $('.drophistory__item').mouseout(function() {
+    $('.drophistory-hover').addClass('hidden');
   });
 
 });

@@ -1,8 +1,8 @@
 .drophistory
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
+  // position: absolute
+  // top: 0
+  // left: 0
+  // right: 0
   border-bottom: 1px solid rgba(#fff, 0.05)
   &__wrap
     padding: 15px 0
@@ -50,3 +50,27 @@
         transform: translate(-50%, -50%)
         background: radial-gradient(rgba($purple-heart, 0.2) 5%, rgba(#fff, 0) 40%)
         border-radius: 50%
+
+.drophistory-hover
+  position: absolute
+  top: 100px
+  background-color: rgba($cod-gray, 0.25)
+  border-radius: 10px
+  z-index: 1
+  &__top
+    padding: 5px 15px
+    b
+      display: block
+      font-size: 16px
+      font-weight: 900
+      text-transform: uppercase
+      color: $torch-red
+      text-shadow: 2px 0 20px rgba($crimson, 0.5)
+  &__username
+    padding: 5px 15px
+    border-top: 1px solid rgba(#fff, 0.05)
+    font-size: 14px
+    font-weight: 700
+    text-transform: uppercase
+  &.hidden
+    display: none
