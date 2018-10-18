@@ -1,0 +1,88 @@
+.case-card
+  &__item
+    margin-bottom: 30px
+    &--yellow
+      .case-card
+        &__inner
+          &::after
+            background-color: $school-bus-yellow
+            box-shadow: 0 4px 30px rgba($school-bus-yellow, 0.5)
+          b
+            color: $golden-dream
+            text-shadow: 1px 0 25px rgba($golden-dream, 0.4)
+        &__img-wrap
+          &::before
+            background-image: radial-gradient(rgba($golden-dream, 0.2) 0%,rgba(0,0,0,0) 60%)
+    &--red
+      .case-card
+        &__inner
+          &::after
+            background-color: $torch-red
+            box-shadow: 0 4px 30px rgba($torch-red, 0.5)
+          b
+            color: $torch-red
+            text-shadow: 1px 0 25px rgba($torch-red, 0.4)
+        &__img-wrap
+          &::before
+            background-image: radial-gradient(rgba($torch-red, 0.2) 0%,rgba(0,0,0,0) 60%)
+    &--pink
+      .case-card
+        &__inner
+          &::after
+            background-color: $violet-red
+            box-shadow: 0 4px 30px rgba($violet-red, 0.5)
+          b
+            color: $torch-red
+            text-shadow: 1px 0 25px rgba($violet-red, 0.4)
+        &__img-wrap
+          &::before
+            background-image: radial-gradient(rgba($violet-red, 0.2) 0%,rgba(0,0,0,0) 60%)
+    &--purple
+      .case-card
+        &__inner
+          &::after
+            background-color: $purple-heart
+            box-shadow: 0 4px 30px rgba($purple-heart, 0.5)
+          b
+            color: $purple-heart
+            text-shadow: 1px 0 25px rgba($purple-heart, 0.4)
+        &__img-wrap
+          &::before
+            background-image: radial-gradient(rgba($purple-heart, 0.2) 0%,rgba(0,0,0,0) 60%)
+  &__inner
+    position: relative
+    height: 100%
+    padding: 90px 10px 55px 10px
+    background: rgba($thunder, 0.75) url('../img/case-card-bg.png') no-repeat center / contain
+    border-radius: 10px
+    box-shadow: 0 4px 20px rgba(#000, 0.3)
+    text-align: center
+    overflow: hidden
+    z-index: 1
+    &::after
+      content: ''
+      position: absolute
+      right: -35px
+      top: -35px
+      +size(70px)
+      transform: rotate(45deg)
+    p
+      margin: 0
+      font-family: $century
+      font-size: 20px
+    b
+      display: block
+      font-size: 30px
+      font-weight: 900
+      text-transform: uppercase
+  &__img-wrap
+    position: relative
+    margin-bottom: 35px
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      +size(160px)
+      transform: translate(-50%, -50%)
+      z-index: -1
