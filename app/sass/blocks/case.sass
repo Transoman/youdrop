@@ -1,20 +1,21 @@
 .case
   &__item
     position: relative
+    margin-bottom: 60px
     &:nth-child(3n)
       .case
         &__inner
           &::after
             display: none
-    &:nth-last-child(-n + 3)
-      .case
-        &__inner
-          &::before
-            display: none
-    &:nth-child(-n + 3)
-      .case
-        &__inner
-          padding-top: 0
+    // &:nth-last-child(-n + 3)
+    //   .case
+    //     &__inner
+    //       &::before
+    //         display: none
+    // &:nth-child(-n + 3)
+    //   .case
+    //     &__inner
+    //       padding-top: 0
     &:hover
       .case
         &__img-wrap
@@ -23,7 +24,7 @@
           color: $golden-dream
   &__inner
     display: block
-    padding-top: 105px
+    padding-top: 40px
     padding-bottom: 75px
     text-align: center
     &::after
@@ -57,7 +58,7 @@
       top: 50%
       transform: translate(-50%, -50%)
       +size(280px, 170px)
-      background: url('../img/content/line.png') no-repeat center
+      background: url('../img/content/line.png') no-repeat center / contain
   &__price
     margin: 0
     font-size: 21px
@@ -67,6 +68,27 @@
     +transition
     span
       font-size: 30px
+  &--inner
+    .case
+      &__item
+        margin-bottom: 40px
+        &:nth-child(3n)
+          .case__inner
+            &::after
+              display: block
+        &:nth-child(4n)
+          .case__inner
+            &::after
+              display: none
+      &__inner
+        padding: 60px 0
+        h3
+          margin-bottom: 5px
+          font-size: 20px
+      &__img-wrap
+        &::after
+          +size(200px, 120px)
+
 
 +media-breakpoint-down(md)
   .case
@@ -81,24 +103,24 @@
           &__inner
             &::after
               display: none
-      &:nth-child(-n + 3)
-        .case
-          &__inner
-            padding-top: 40px
-      &:nth-child(-n + 2)
-        .case
-          &__inner
-            padding-top: 0
-      &:nth-last-child(-n + 3)
-        .case
-          &__inner
-            &::before
-              display: block
-      &:nth-last-child(-n + 2)
-        .case
-          &__inner
-            &::before
-              display: none
+      // &:nth-child(-n + 3)
+      //   .case
+      //     &__inner
+      //       padding-top: 40px
+      // &:nth-child(-n + 2)
+      //   .case
+      //     &__inner
+      //       padding-top: 0
+      // &:nth-last-child(-n + 3)
+      //   .case
+      //     &__inner
+      //       &::before
+      //         display: block
+      // &:nth-last-child(-n + 2)
+      //   .case
+      //     &__inner
+      //       &::before
+      //         display: none
     &__inner
       padding-top: 40px
       padding-bottom: 40px
@@ -106,6 +128,21 @@
         font-size: 24px
     &__img-wrap
       margin-bottom: 45px
+    &--inner
+      .case
+        &__item
+          &:nth-child(2n)
+            .case
+              &__inner
+                &::after
+                  display: block
+          &:nth-child(3n)
+            .case
+              &__inner
+                &::after
+                  display: none
+        &__inner
+          padding: 40px 0
 
 +media-breakpoint-down(sm)
   .case
@@ -115,19 +152,19 @@
           &__inner
             &::after
               display: none
-      &:nth-child(-n + 2)
-        .case
-          &__inner
-            padding-top: 40px
-      &:first-child
-        .case
-          &__inner
-            padding-top: 0
-      &:nth-last-child(-n + 3)
-        .case
-          &__inner
-            &::before
-              display: block
+      // &:nth-child(-n + 2)
+      //   .case
+      //     &__inner
+      //       padding-top: 40px
+      // &:first-child
+      //   .case
+      //     &__inner
+      //       padding-top: 0
+      // &:nth-last-child(-n + 3)
+      //   .case
+      //     &__inner
+      //       &::before
+      //         display: block
       &:last-child
         .case
           &__inner
@@ -136,9 +173,27 @@
     &__inner
       &::after
         display: none
+    &--inner
+      .case
+        &__item
+          &:nth-child(3n)
+            .case
+              &__inner
+                &::after
+                  display: block
+          &:nth-child(2n)
+            .case
+              &__inner
+                &::after
+                  display: none
+        &__inner
+          &::after
+            display: block
 
 +media-breakpoint-down(xs)
   .case
     &__inner
       h3
         font-size: 20px
+      &::after
+        display: none
