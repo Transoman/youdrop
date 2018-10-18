@@ -1,0 +1,59 @@
+.case-roulette
+  padding-top: 200px
+  .section-title
+    margin: 0
+  &__img-wrap
+    position: relative
+    text-align: center
+    img
+      width: 300px
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      +size(450px, 270px)
+      background: url('../img/content/line.png') no-repeat center / contain
+  &__weapon
+    position: relative
+    margin-bottom: 80px
+    margin-top: -100px
+    &-container
+      padding: 25px 0
+      background: linear-gradient(to right, rgba($thunder,0) 0%,rgba($thunder,0.75) 15%,rgba($thunder,0.75) 19%,rgba($thunder,0.75) 20%,rgba($thunder,0.75) 80%,rgba($thunder,0.75) 81%,rgba($thunder,0.75) 85%,rgba($thunder,0) 100%)
+      border-radius: 10px
+      overflow: hidden
+      // box-shadow: 0 4px 20px rgba(#000, 0.3)
+    &-inner
+      display: flex
+      width: 100%
+    &-item
+      flex-shrink: 0
+      flex-grow: 1
+      width: 19.65%
+      padding: 25px 15px
+      text-align: center
+      border-right: 1px solid rgba(#fff, 0.1)
+
+  &__arrow
+    position: absolute
+    bottom: -10px
+    left: 50%
+    transform: transateX(-50%)
+    +size(30px)
+    fill: $golden-dream
+  &__btns
+    text-align: center
+    .btn
+      display: block
+      max-width: 200px
+      margin: 0 auto 10px
+  &__price
+    font-size: 21px
+    font-weight: 900
+    text-transform: uppercase
+    color: $golden-dream
+    text-shadow: 1px 0 25px rgba($golden-dream, 0.4)
+    span
+      font-size: 30px
