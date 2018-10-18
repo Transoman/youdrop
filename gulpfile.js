@@ -1,24 +1,9 @@
 var gulp         = require('gulp'),
     gp           = require('gulp-load-plugins')(),
     uglifyEs = require('gulp-uglify-es').default,
-    // sass         = require('gulp-sass'), // Sass компілятор в css
-    // sourcemaps   = require('gulp-sourcemaps'),
-    // concat       = require('gulp-concat'), // З'єднує (конкатенує) файли
     autoprefixer = require('autoprefixer'), // PostCss autoprefixer - автоматично формує вендорні префікси
-    // cssmin       = require('gulp-cssmin'), // Мініфікація css
-    // rename       = require('gulp-rename'), // Перейменування файлу
-    // postcss      = require('gulp-postcss'), // PostCss
-    // mqpacker     = require('css-mqpacker'), // Збирає всі медіа-запити в одному місці
-    // imagemin     = require('gulp-imagemin'),
-    // svgstore     = require('gulp-svgstore'),
-    // svgmin       = require('gulp-svgmin'),
     del          = require('del'), // Видаляє папки, файли
     // run          = require('run-sequence'), // Запускає послідовно задачі
-    // plumber      = require('gulp-plumber'), // Відслідковування і вивід в консоль помилок
-    // notify       = require("gulp-notify"), // Вивід повідомлення про помилку
-    // cheerio      = require('gulp-cheerio'),
-    // browserify = require('browserify'),
-    // source = require('vinyl-source-stream'),
     gcmq         = require('gulp-group-css-media-queries'),
     browserSync  = require('browser-sync').create(); // Сервер
 
@@ -99,12 +84,16 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('images', function() {
-  return gulp.src('app/img/**/*')
+  return gulp.src('app/img/**/*.*')
     // .pipe(imagemin([
     //  imagemin.optipng({optimizationLevel: 3}),
     //  imagemin.jpegtran({progressive: true})
     // ]))
     .pipe(gulp.dest('build/img'))
+});
+
+gulp.task('clean', function() {
+  del.sync('build');
 });
 
 gulp.task('bat', function() {
@@ -171,9 +160,9 @@ gulp.task('watch', function() {
 
 
 /* Project transfer to production */
-gulp.task('clean', function() {
-  return del.sync('dist');
-});
+// gulp.task('clean', function() {
+//   return del.sync('dist');
+// });
 
 gulp.task('clean:img', function() {
   return del.sync('build/img');
@@ -197,4 +186,4 @@ gulp.task('build', ['clean', 'styles', 'svg'], function(){
 });
 
 
-gulp.task('default', ['html', 'styles', 'script', 'js', 'fonts', 'images', 'bat', 'watch', 'browser-sync']);
+gulp.task('default', ['clean', 'html', 'styles', 'script', 'js', 'fonts', 'images', 'svg', 'bat', 'watch', 'browser-sync']);
