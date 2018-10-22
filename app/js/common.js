@@ -77,4 +77,58 @@ jQuery(document).ready(function($) {
     }
   });
 
+  function readMore() {
+    var elem = $('.terms__wrap');
+    var fullHeight = $('.terms__content').innerHeight();
+    var maxHeight = 480;
+    var moreText = 'Показать все';
+    var lessText = 'Спрятать';
+    var btn = $('.terms__more');
+
+    $(window).resize(function(event) {
+      fullHeight = $('.terms__content').innerHeight();
+      console.log(fullHeight);
+      if (parseInt(elem.css('height'), 10) != fullHeight && parseInt(elem.css('height'), 10) != maxHeight) {
+        elem.css('height', maxHeight).animate({
+            height: fullHeight,
+            },
+            1000, function() {
+              
+          });
+      }
+    });
+
+    elem.css({
+      height: maxHeight
+    })
+
+    btn.click(function(e) {
+      e.preventDefault();
+
+      if (parseInt(elem.css('height'), 10) != fullHeight) {
+        elem.css('height', maxHeight).animate({
+          height: fullHeight,
+          },
+          1000, function() {
+            elem.addClass('active');
+            btn.html(lessText);
+        });
+      }
+      else {
+        elem.animate({
+          height: maxHeight,
+          },
+          1000, function() {
+            elem.css('height', maxHeight);
+            elem.removeClass('active');
+            btn.html(moreText);
+        });
+      }
+
+      
+    });
+  }
+
+  readMore();
+
 });
