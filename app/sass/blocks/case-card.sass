@@ -1,6 +1,9 @@
 .case-card
   &__item
     margin-bottom: 30px
+    &:hover
+      .case-card__img-wrap img
+        transform: scale(1.1)
     &--yellow
       .case-card
         &__inner
@@ -86,3 +89,5 @@
       +size(160px)
       transform: translate(-50%, -50%)
       z-index: -1
+    img
+      +transition(0.8s)

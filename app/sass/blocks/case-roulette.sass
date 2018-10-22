@@ -20,18 +20,28 @@
     margin-bottom: 80px
     margin-top: -100px
     &-container
+      position: relative
       padding: 25px 0
-      background: linear-gradient(to right, rgba($thunder,0) 0%,rgba($thunder,0.75) 15%,rgba($thunder,0.75) 19%,rgba($thunder,0.75) 20%,rgba($thunder,0.75) 80%,rgba($thunder,0.75) 81%,rgba($thunder,0.75) 85%,rgba($thunder,0) 100%)
+      background: url('../img/case-roulette-weapon-bg.png') no-repeat center, linear-gradient(to right, rgba($thunder,0) 0%,rgba($thunder,0.75) 15%,rgba($thunder,0.75) 19%,rgba($thunder,0.75) 20%,rgba($thunder,0.75) 80%,rgba($thunder,0.75) 81%,rgba($thunder,0.75) 85%,rgba($thunder,0) 100%)
       border-radius: 10px
       overflow: hidden
       // box-shadow: 0 4px 20px rgba(#000, 0.3)
+      // &::before
+      //   content: ''
+      //   position: absolute
+      //   top: 0
+      //   bottom: 0
+      //   left: 3%
+      //   width: 19%
+      //   background-image: linear-gradient(to left, rgba($thunder, 0.65) 50%,rgba($thunder, 0) 100%)
+      //   z-index: 1
     &-inner
       display: flex
       width: 100%
     &-item
       flex-shrink: 0
       flex-grow: 1
-      width: 19.65%
+      width: 20.15%
       padding: 25px 15px
       text-align: center
       border-right: 1px solid rgba(#fff, 0.1)
@@ -40,9 +50,10 @@
     position: absolute
     bottom: -10px
     left: 50%
-    transform: transateX(-50%)
+    transform: translateX(-50%) rotate(-90deg)
     +size(30px)
     fill: $golden-dream
+    filter: drop-shadow(0 0 5px rgba($golden-dream, 0.5))
   &__btns
     text-align: center
     .btn
@@ -57,3 +68,27 @@
     text-shadow: 1px 0 25px rgba($golden-dream, 0.4)
     span
       font-size: 30px
+
+.shadow
+  position: relative
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    +size(160px)
+    transform: translate(-50%, -50%)
+    z-index: -1
+  &--red
+    &::before
+      background-image: radial-gradient(rgba($torch-red, 0.2) 0%,rgba(0,0,0,0) 60%)
+  &--purple
+    &::before
+      background-image: radial-gradient(rgba($purple-heart, 0.2) 0%,rgba(0,0,0,0) 60%)
+  &--yellow
+    &::before
+      background-image: radial-gradient(rgba($golden-dream, 0.2) 0%,rgba(0,0,0,0) 60%)
+  &--pink
+    &::before
+      background-image: radial-gradient(rgba($violet-red, 0.2) 0%,rgba(0,0,0,0) 60%)
