@@ -43,4 +43,38 @@ jQuery(document).ready(function($) {
     $('.drophistory-hover').addClass('hidden');
   });
 
+  $('.inventory__list-wrap').jScrollPane();
+  $('.inventory__choice-list').jScrollPane();
+  $('.inventory-modal__wrap').jScrollPane({
+    autoReinitialise: true
+  });
+
+  $('.inventory-modal__item').click(function(e) {
+    if (!$(this).hasClass('active')) {
+      $(this).addClass('active');
+    }
+    else {
+      $(this).removeClass('active');
+    }
+  });
+
+  // $(document).mouseup(function (e){ // событие клика по веб-документу
+  //   var div = $(".inventory-modal"); // тут указываем ID элемента
+  //   if (!div.is(e.target) // если клик был не по нашему блоку
+  //       && div.has(e.target).length === 0) { // и не по его дочерним элементам
+  //     div.hide(); // скрываем его
+  //   }
+  // });
+
+  $('.inventory-out_show').click(function(e) {
+    e.preventDefault();
+    $('#inventory-out').show();
+  });
+
+  $(document).keydown(function(event) { 
+    if (event.keyCode == 27) { 
+      $('.inventory-modal-wrap').hide();
+    }
+  });
+
 });

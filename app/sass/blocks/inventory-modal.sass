@@ -1,0 +1,104 @@
+.inventory-modal
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  width: 100%
+  max-width: 570px
+  background-color: $mine-shaft-3
+  border-radius: 10px
+  box-shadow: 0 5px 20px rgba(#000, 0.3)
+  &-wrap
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    display: none
+    z-index: 10
+    overflow: auto
+  &__top
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 15px 30px
+    background-color: $mine-shaft-2
+    border-radius: 10px 10px 0 0
+  &__title
+    margin: 0
+    font-size: 20px
+    font-weight: 700
+  &__btn
+    background: none
+    border: 0
+    +size(25px)
+    margin-right: 25px
+    padding: 0
+    cursor: pointer
+    &:last-child
+      margin-right: 0
+    &:focus
+      outline: none
+    svg
+      +size(20px)
+      +transition
+    &--send
+      svg
+        fill: $cerulean
+        filter: drop-shadow(0 0 2px rgba($cerulean, 0.5))
+      &:hover
+        svg
+          fill: $havelock-blue
+    &--update
+      &:hover
+        svg
+          fill: rgba(#fff, 0.3)
+  &__wrap
+    height: 430px
+  &__list
+    display: flex
+    flex-wrap: wrap
+  &__item
+    width: 25%
+    padding: 25px 15px 20px
+    text-align: center
+    cursor: pointer
+    user-select: none
+    overflow: hidden
+    p
+      margin: 0
+      font-size: 12px
+    b
+      font-size: 12px
+      font-weight: 900
+      text-transform: uppercase
+    &--red
+      b
+        color: $accent
+        text-shadow: 2px 0 20px rgba($accent, 0.3)
+    &--yellow
+      b
+        color: $school-bus-yellow
+        text-shadow: 2px 0 20px rgba($school-bus-yellow, 0.3)
+    &--pink
+      b
+        color: $violet-red
+        text-shadow: 2px 0 20px rgba($violet-red, 0.3)
+    &.active
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        left: 30%
+        top: 45%
+        +size(15px)
+        color: #fff
+        mask: url(../img/icon/icon-check.svg) no-repeat 50% 50%;
+        background-color: $forest-green
+      .inventory-modal
+        &__img-wrap
+          img
+            transform: scale(0.8)
+  &__img-wrap
+    img
+      +transition

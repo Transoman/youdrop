@@ -3,3 +3,52 @@
   font-family: $century
   color: rgba($tundora, 0.4)
   text-align: center
+
+.shadow
+  position: relative
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    +size(160px)
+    transform: translate(-50%, -50%)
+    z-index: -1
+  &--red
+    &::before
+      background-image: radial-gradient(rgba($torch-red, 0.2) 0%,rgba(0,0,0,0) 60%)
+  &--purple
+    &::before
+      background-image: radial-gradient(rgba($purple-heart, 0.2) 0%,rgba(0,0,0,0) 60%)
+  &--yellow
+    &::before
+      background-image: radial-gradient(rgba($golden-dream, 0.2) 0%,rgba(0,0,0,0) 60%)
+  &--pink
+    &::before
+      background-image: radial-gradient(rgba($violet-red, 0.2) 0%,rgba(0,0,0,0) 60%)
+  &--blue
+    &::before
+      background-image: radial-gradient(rgba($cerulean, 0.2) 0%,rgba(0,0,0,0) 60%)
+
+.jspVerticalBar
+  width: 5px
+  top: 7px
+  right: 5px
+  height: 98%
+  border-radius: 2.5px
+  overflow: hidden
+  background: none
+  z-index: 2
+
+.jspContainer, .jspScrollable
+  outline: none
+  &:focus
+    outline: none
+
+.jspTrack
+  background: rgba(#fff, 0.08)
+
+.jspDrag
+  background: $tundora
+  border-radius: 2.5px

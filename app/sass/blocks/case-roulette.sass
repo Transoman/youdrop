@@ -68,27 +68,3 @@
     text-shadow: 1px 0 25px rgba($golden-dream, 0.4)
     span
       font-size: 30px
-
-.shadow
-  position: relative
-  z-index: 1
-  &::before
-    content: ''
-    position: absolute
-    top: 50%
-    left: 50%
-    +size(160px)
-    transform: translate(-50%, -50%)
-    z-index: -1
-  &--red
-    &::before
-      background-image: radial-gradient(rgba($torch-red, 0.2) 0%,rgba(0,0,0,0) 60%)
-  &--purple
-    &::before
-      background-image: radial-gradient(rgba($purple-heart, 0.2) 0%,rgba(0,0,0,0) 60%)
-  &--yellow
-    &::before
-      background-image: radial-gradient(rgba($golden-dream, 0.2) 0%,rgba(0,0,0,0) 60%)
-  &--pink
-    &::before
-      background-image: radial-gradient(rgba($violet-red, 0.2) 0%,rgba(0,0,0,0) 60%)
