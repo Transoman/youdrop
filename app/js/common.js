@@ -19,13 +19,8 @@ jQuery(document).ready(function($) {
     }
   });
 
-  // $('a[href=#"]').click(function(e) {
-  //   e.preventDefault();
-  // });
-
   $('.drophistory__item').mouseover(function(e){
     var offset = $(this).offset().left - 25;
-    // console.log();
 
     if (offset + 250 > $(window).innerWidth()) {
       offset = $(window).innerWidth() - 205;
@@ -47,7 +42,7 @@ jQuery(document).ready(function($) {
     autoReinitialise: true
   });
   $('.inventory__choice-list').jScrollPane({
-    // autoReinitialise: true
+    autoReinitialise: true
   });
   $('.inventory-modal__wrap').jScrollPane({
     autoReinitialise: true
@@ -66,25 +61,6 @@ jQuery(document).ready(function($) {
     $(this).select();
   });
 
-  // $(document).mouseup(function (e){ // событие клика по веб-документу
-  //   var div = $(".inventory-modal"); // тут указываем ID элемента
-  //   if (!div.is(e.target) // если клик был не по нашему блоку
-  //       && div.has(e.target).length === 0) { // и не по его дочерним элементам
-  //     div.hide(); // скрываем его
-  //   }
-  // });
-
-  // $('.inventory-out_show').click(function(e) {
-  //   e.preventDefault();
-  //   $('#inventory-out').show();
-  // });
-
-  // $(document).keydown(function(event) { 
-  //   if (event.keyCode == 27) { 
-  //     $('.inventory-modal-wrap').hide();
-  //   }
-  // });
-
    $('.inventory-modal').popup();
 
   function readMore() {
@@ -97,14 +73,12 @@ jQuery(document).ready(function($) {
 
     $(window).resize(function(event) {
       fullHeight = $('.terms__content').innerHeight();
-      console.log(fullHeight);
       if (parseInt(elem.css('height'), 10) != fullHeight && parseInt(elem.css('height'), 10) != maxHeight) {
         elem.css('height', maxHeight).animate({
-            height: fullHeight,
-            },
-            1000, function() {
-              
-          });
+          height: fullHeight,
+          },
+          1000, function() {
+        });
       }
     });
 
@@ -135,7 +109,6 @@ jQuery(document).ready(function($) {
         });
       }
 
-      
     });
   }
 

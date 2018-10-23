@@ -1,6 +1,5 @@
 .inventory
   display: flex
-  padding-top: 100px
   border-radius: 10px
   overflow: hidden
   &__left
@@ -77,6 +76,7 @@
       display: flex
       padding: 20px
       border-bottom: 1px solid rgba(#fff, 0.05)
+      overflow: hidden
       &:last-child
         border: 0
       p
@@ -99,3 +99,37 @@
         background-image: linear-gradient(to right, lighten($cerulean, 5%) 0%, $blue-ribbon 100%);
       &:focus
         box-shadow: none
+
+
++media-breakpoint-down(lg)
+  .inventory
+    &__left
+      width: 70%
+    &__list
+      &-item
+        width: 33.33%
+    &__choice
+      &-item
+        padding: 15px
+      &-img-wrap
+        margin-right: 10px
+
++media-breakpoint-down(md)
+  .inventory
+    &__left
+      width: 60%
+    &__list
+      &-item
+        width: 50%
+
++media-breakpoint-down(sm)
+  .inventory
+    flex-direction: column
+    &__left
+      width: 100%
+
++media-breakpoint-down(xs)
+  .inventory
+    &__list
+      &-item
+        width: 50%

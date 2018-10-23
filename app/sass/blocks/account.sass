@@ -54,10 +54,33 @@
       display: block
       padding: 10px 20px
       font-size: 20px
+  &__btns
+    margin-bottom: 50px
   &__attention
-    margin-top: 50px
+    margin-bottom: 100px
     h3
       margin-bottom: 10px
       font-size: 24px
       font-weight: 700
       color: $accent
+
++media-breakpoint-down(md)
+  .account
+    padding-top: 180px
+
++media-breakpoint-down(sm)
+  .account
+    &__wrap
+      flex-direction: column
+      align-items: center
+      text-align: center
+    &__img-wrap
+      margin: 0
+      margin-bottom: 15px
+    &__info
+      width: 100%
+    &__btns
+      text-align: center
+    &__attention
+      margin-bottom: 50px
+      text-align: center
