@@ -1,0 +1,144 @@
+<section class="shop">
+  <div class="container">
+    <h2 class="section-title" data-title="Marketplace">Торговая площадка</h2>
+
+    <div class="row">
+      <div class="col-lg-3">
+        <aside class="sidebar">
+          <h3 class="sidebar__title">Фильтры</h3>
+
+          <form class="filters form">
+            <fieldset class="filters__item filters__item--price">
+              <legend class="filters__title">Стоимость</legend>
+              <div class="form-group">
+                <input type="number" name="price_from" class="form__field" autocomplete="off" min="80"> <span>-</span>
+                <input type="number" name="price_to" class="form__field" autocomplete="off" min="80" max="15000"> USD
+              </div>
+              <div id="filters__price"></div>
+            </fieldset>
+
+            <fieldset class="filters__item">
+              <legend class="filters__title">Раритетность</legend>
+              <div class="form-group">
+                <input type="checkbox" name="rarity[]" class="form__checkbox" id="rarity-basic" value="Базовый класс">
+                <label for="rarity-basic" class="form__label form__label--checkbox">Базовый класс</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="rarity[]" class="form__checkbox" id="rarity-consumer" value="Ширпотреб">
+                <label for="rarity-consumer" class="form__label form__label--checkbox">Ширпотреб</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="rarity[]" class="form__checkbox" id="rarity-industrial" value="Промышленное качество">
+                <label for="rarity-industrial" class="form__label form__label--checkbox">Промышленное качество</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="rarity[]" class="form__checkbox" id="rarity-army" value="Армейское качество">
+                <label for="rarity-army" class="form__label form__label--checkbox">Армейское качество</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="filters__item">
+              <legend class="filters__title">Качество</legend>
+              <div class="form-group">
+                <input type="checkbox" name="quality[]" class="form__checkbox" id="quality-hardened" value="Закаленное в боях">
+                <label for="quality-hardened" class="form__label form__label--checkbox">Закаленное в боях</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="quality[]" class="form__checkbox" id="quality-not-pained" value="Не покрашено">
+                <label for="quality-not-pained" class="form__label form__label--checkbox">Не покрашено</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="quality[]" class="form__checkbox" id="quality-slightly-used" value="Немного поношенное">
+                <label for="quality-slightly-used" class="form__label form__label--checkbox">Немного поношенное</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="quality[]" class="form__checkbox" id="quality-well-worn" value="Поношенное">
+                <label for="quality-well-worn" class="form__label form__label--checkbox">Поношенное</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="filters__item">
+              <legend class="filters__title">Категория</legend>
+              <div class="form-group">
+                <input type="checkbox" name="category[]" class="form__checkbox" id="category-1" value="Категория 1">
+                <label for="category-1" class="form__label form__label--checkbox">Категория 1</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="category[]" class="form__checkbox" id="category-2" value="Категория 2">
+                <label for="category-2" class="form__label form__label--checkbox">Категория 2</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="category[]" class="form__checkbox" id="category-3" value="Категория 3">
+                <label for="category-3" class="form__label form__label--checkbox">Категория 3</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="category[]" class="form__checkbox" id="category-4" value="Категория 4">
+                <label for="category-4" class="form__label form__label--checkbox">Категория 4</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="category[]" class="form__checkbox" id="category-5" value="Категория 5">
+                <label for="category-5" class="form__label form__label--checkbox">Категория 5</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="filters__item">
+              <legend class="filters__title">Категория</legend>
+              <div class="form-group">
+                <input type="checkbox" name="category2[]" class="form__checkbox" id="category-11" value="Категория 1">
+                <label for="category-11" class="form__label form__label--checkbox">Категория 1</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="category2[]" class="form__checkbox" id="category-22" value="Категория 2">
+                <label for="category-22" class="form__label form__label--checkbox">Категория 2</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="category2[]" class="form__checkbox" id="category-33" value="Категория 3">
+                <label for="category-33" class="form__label form__label--checkbox">Категория 3</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="category2[]" class="form__checkbox" id="category-44" value="Категория 4">
+                <label for="category-44" class="form__label form__label--checkbox">Категория 4</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" name="category2[]" class="form__checkbox" id="category-55" value="Категория 5">
+                <label for="category-55" class="form__label form__label--checkbox">Категория 5</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="filters__item filters__item--sticker">
+              <legend class="filters__title">Стикеры</legend>
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="radio" name="sticker" class="form__radio" id="sticker-any" value="С любыми" checked>
+                  <label for="sticker-any" class="form__label form__label--radio">С любыми</label>
+                </div>
+                <div class="form-group">
+                  <input type="radio" name="sticker" class="form__radio" id="sticker-without" value="Без">
+                  <label for="sticker-without" class="form__label form__label--radio">Без</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form__select-wrap">
+                  <select name="sticker_type" class="form__select">
+                    <option value="Все типы">Все типы</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <p>По вашему запросу найдено:</p>
+
+            <b class="filters__find">15 предметов</b>
+
+            <button type="submit" class="btn filters__btn">Показать</button>
+
+          </form>
+        </aside>
+      </div>
+      <div class="col-lg-9"></div>
+    </div>
+
+  </div>
+  <!-- /.container -->
+</section>
+<!-- /.shop -->

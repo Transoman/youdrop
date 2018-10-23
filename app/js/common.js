@@ -116,4 +116,37 @@ jQuery(document).ready(function($) {
 
   $('.how-tabs').tabslet();
 
+  if ($('.filters__price')) {
+    var sliderPrice = document.getElementById('filters__price');
+
+    var minInput = document.querySelector('.form__field[name=price_from]');
+    var maxInput = document.querySelector('.form__field[name=price_to]');
+
+    var minPrice = parseInt(document.querySelector('.form__field[name=price_from]').getAttribute('min'), 10);
+    var maxPrice = parseInt(document.querySelector('.form__field[name=price_to]').getAttribute('max'), 10);
+
+    noUiSlider.create(sliderPrice, {
+      start: [minPrice, maxPrice / 1.5 ],
+      step: 1,
+      connect: true,
+      range: {
+        'min': minPrice,
+        'max': maxPrice
+      }
+    });
+
+    sliderPrice.noUiSlider.on('update', function (values, handle) {
+      minInput.value = parseInt(values[0], 10);
+      maxInput.value = parseInt(values[1], 10);
+    });
+
+    minInput.addEventListener('change', function () {
+      sliderPrice.noUiSlider.set([this.value,]);
+    });
+
+    maxInput.addEventListener('change', function () {
+      sliderPrice.noUiSlider.set([,this.value]);
+    });
+  }
+
 });
