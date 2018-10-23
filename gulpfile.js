@@ -71,7 +71,8 @@ gulp.task('script', function() {
       'node_modules/jscrollpane/script/jquery.mousewheel.js',
       'node_modules/jscrollpane/script/jquery.jscrollpane.min.js',
       'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
-      'node_modules/jquery-match-height/dist/jquery.matchHeight-min.js'
+      'node_modules/jquery-match-height/dist/jquery.matchHeight-min.js',
+      'node_modules/tabslet/jquery.tabslet.min.js'
     ])
   .pipe(gp.concat('script.js'))
   // .pipe(gp.uglify())

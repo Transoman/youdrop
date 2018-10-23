@@ -1,6 +1,5 @@
 .advantages
   padding-top: 115px
-  // padding-bottom: 230px
   background: url('../img/advantages-bg.png') no-repeat center bottom / cover
   &__item
     margin-bottom: 50px
@@ -31,6 +30,12 @@
     right: 0
     img
       filter: drop-shadow(0 0 25px rgba($golden-dream, 1));
+  &--how
+    padding-top: 0
+    .advantages
+      &__inner
+        padding-right: 10px
+        padding-left: 10px
 
 +media-breakpoint-down(lg)
   .advantages

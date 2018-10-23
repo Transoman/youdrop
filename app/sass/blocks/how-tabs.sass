@@ -1,0 +1,91 @@
+.how-tabs
+  display: flex
+  margin-bottom: 165px
+  &__list
+    margin: 0
+    padding: 30px
+    list-style: none
+    width: 270px
+    flex-shrink: 0
+    margin-right: 60px
+    background-color: rgba($mine-shaft-3, 0.5)
+    border-radius: 10px
+    li
+      margin-bottom: 30px
+      &:last-child
+        margin-bottom: 0
+      &.active
+        a
+          color: $violet-red
+          text-shadow: 4px 0 30px rgba($violet-red, 0.5)
+    a
+      font-weight: 500
+  &__item
+    p
+      line-height: 2
+  &__top
+    display: flex
+    align-items: center
+    margin-bottom: 45px
+    h3
+      margin: 0
+      font-size: 48px
+      font-weight: 700
+      text-transform: uppercase
+  &__img-wrap
+    position: relative
+    margin-right: 70px
+    flex-shrink: 0
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      +size(150px)
+      border: 1px solid rgba($accent, 0.12)
+      border-radius: 50%
+      z-index: -1
+    img
+      filter: drop-shadow(4px 0 30px rgba($violet-red, 0.5))
+
++media-breakpoint-down(lg)
+  .how-tabs
+    &__top
+      h3
+        font-size: 36px
+
++media-breakpoint-down(md)
+  .how-tabs
+    &__list
+      padding: 15px
+      margin-right: 30px
+    &__img-wrap
+      +size(60px)
+      margin-right: 40px
+      &::before
+        +size(110px)
+    &__top
+      h3
+        font-size: 28px
+
++media-breakpoint-down(sm)
+  .how-tabs
+    flex-direction: column
+    margin-bottom: 60px
+    &__list
+      display: flex
+      flex-wrap: wrap
+      width: auto
+      margin: 0
+      margin-bottom: 20px
+      li
+        margin: 0 15px 15px 0
+
++media-breakpoint-down(xs)
+  .how-tabs
+    &__top
+      margin-bottom: 25px
+      h3
+        font-size: 18px

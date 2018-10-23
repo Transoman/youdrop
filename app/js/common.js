@@ -114,4 +114,6 @@ jQuery(document).ready(function($) {
 
   readMore();
 
+  $('.how-tabs').tabslet();
+
 });

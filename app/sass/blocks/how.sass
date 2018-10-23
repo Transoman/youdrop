@@ -1,0 +1,37 @@
+.how
+  padding-bottom: 135px
+  background: url('../img/how-bg.png') no-repeat center top
+  &__attention
+    background-color: rgba($mine-shaft-3, 0.5)
+    border-radius: 10px
+    overflow: hidden
+    &-title
+      margin: 0
+      padding: 20px 30px
+      font-size: 20px
+      font-weight: 700
+      background-image: linear-gradient(to right, $crimson, $paprika)
+    &-content
+      padding: 30px 40px
+      ol
+        padding: 0
+        margin: 0
+        column-count: 2
+        column-gap: 30px
+        li
+          margin-bottom: 15px
+          color: rgba(#fff, 0.75)
+          &:last-child
+            margin-bottom: 0
+
++media-breakpoint-down(sm)
+  .how
+    &__attention
+      &-content
+        padding: 20px
+        ol
+          column-count: 1
+
++media-breakpoint-down(xs)
+  .how
+    padding-bottom: 40px

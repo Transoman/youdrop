@@ -37,6 +37,7 @@
     "jquery": "^3.3.1",
     "jquery-popup-overlay": "^1.7.4",
     "jquery-validation": "^1.17.0",
-    "jscrollpane": "^2.2.1"
+    "jscrollpane": "^2.2.1",
+    "tabslet": "^1.7.3"
   }
 }
