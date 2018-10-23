@@ -43,8 +43,12 @@ jQuery(document).ready(function($) {
     $('.drophistory-hover').addClass('hidden');
   });
 
-  $('.inventory__list-wrap').jScrollPane();
-  $('.inventory__choice-list').jScrollPane();
+  $('.inventory__list-wrap').jScrollPane({
+    autoReinitialise: true
+  });
+  $('.inventory__choice-list').jScrollPane({
+    // autoReinitialise: true
+  });
   $('.inventory-modal__wrap').jScrollPane({
     autoReinitialise: true
   });
@@ -58,6 +62,10 @@ jQuery(document).ready(function($) {
     }
   });
 
+  $('.account__trade-link').click(function() {
+    $(this).select();
+  });
+
   // $(document).mouseup(function (e){ // событие клика по веб-документу
   //   var div = $(".inventory-modal"); // тут указываем ID элемента
   //   if (!div.is(e.target) // если клик был не по нашему блоку
@@ -66,16 +74,18 @@ jQuery(document).ready(function($) {
   //   }
   // });
 
-  $('.inventory-out_show').click(function(e) {
-    e.preventDefault();
-    $('#inventory-out').show();
-  });
+  // $('.inventory-out_show').click(function(e) {
+  //   e.preventDefault();
+  //   $('#inventory-out').show();
+  // });
 
-  $(document).keydown(function(event) { 
-    if (event.keyCode == 27) { 
-      $('.inventory-modal-wrap').hide();
-    }
-  });
+  // $(document).keydown(function(event) { 
+  //   if (event.keyCode == 27) { 
+  //     $('.inventory-modal-wrap').hide();
+  //   }
+  // });
+
+   $('.inventory-modal').popup();
 
   function readMore() {
     var elem = $('.terms__wrap');

@@ -13,7 +13,7 @@
     position: relative
     width: 16.66%
     flex-shrink: 0
-    padding: 13px 5px
+    padding: 13px 10px
     text-align: center
     cursor: pointer
     border-right: 1px solid rgba(#fff, 0.05)
@@ -23,8 +23,12 @@
     p
       margin: 0
     b
+      display: block
       font-weight: 900
       text-transform: uppercase
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
     &--yellow
       b
         color: $golden-dream
@@ -33,6 +37,14 @@
       b
         color: $accent
         text-shadow: 2px 0 20px rgba($accent, 0.5)
+    &--blue
+      b
+        color: $blue-ribbon
+        text-shadow: 2px 0 20px rgba($blue-ribbon, 0.5)
+    &--pink
+      b
+        color: $violet-red
+        text-shadow: 2px 0 20px rgba($violet-red, 0.5)
 
   &__more
     position: absolute
@@ -58,10 +70,23 @@
     position: absolute
     top: 20px
     +size(30px)
-    // margin-top: -15px
-    fill: $golden-dream
-    filter: drop-shadow(0 0 5px rgba($golden-dream, 0.5))
+    padding: 0
+    background: none
+    border: 0
     z-index: 1
+    cursor: pointer
+    svg
+      +size(30px)
+      fill: $golden-dream
+      filter: drop-shadow(0 0 5px rgba($golden-dream, 0.5))
+      +transition
+    &:hover
+      svg
+        fill: lighten($golden-dream, 15%)
+    &:focus
+      outline: none
+      svg
+        fill: darken($golden-dream, 5%)
   &__prev
     transform: rotate(-180deg)
     left: 0
