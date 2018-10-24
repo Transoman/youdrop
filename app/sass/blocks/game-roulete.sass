@@ -1,0 +1,23 @@
+.game-roulette
+  position: relative
+  &__container
+    position: relative
+    padding: 8px 0
+    background: linear-gradient(to right, rgba(#fff,0) 0%,rgba(#fff,0.1) 15%,rgba(#fff,0.1) 19%,rgba(#fff,0.1) 20%,rgba(#fff,0.1) 80%,rgba(#fff,0.1) 81%,rgba(#fff,0.1) 85%,rgba(#fff,0) 100%)
+    overflow: hidden
+  &__inner
+    display: flex
+    width: 100%
+    transform: translateX(-55px)
+  &__item
+    flex-shrink: 0
+    +size(100px)
+    margin-right: 10px
+    border-radius: 10px
+    background-color: $mine-shaft
+    overflow: hidden
+    &:last-child
+      margin-right: 0
+  &__arrow
+    @extend .case-roulette__arrow
+    bottom: -15px

@@ -149,7 +149,7 @@ jQuery(document).ready(function($) {
 
   hideStickerSelect();
 
-  if ($('.filters__price')) {
+  if ($('.filters__price').length) {
     var sliderPrice = document.getElementById('filters__price');
 
     var minInput = document.querySelector('.form__field[name=price_from]');
