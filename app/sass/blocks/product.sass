@@ -1,0 +1,147 @@
+.product
+  padding-top: 330px
+  &__wrap
+    display: flex
+  &__left
+    width: 40.17%
+    flex-shrink: 0
+    padding: 0 15px
+    text-align: center
+    p
+      margin: 0
+      font-family: $century
+      font-size: 20px
+    b
+      font-size: 28px
+      font-weight: 900
+      text-transform: uppercase
+    &--purple
+      b
+        color: $purple-heart
+        text-shadow: 1px 0 25px rgba($purple-heart, 0.4)
+  &__img-wrap
+    margin-bottom: 45px
+    padding-top: 20px
+  &__right
+    flex-grow: 1
+  &__price
+    margin-bottom: 15px
+    font-size: 20px
+    font-weight: 900
+    text-transform: uppercase
+    span
+      font-size: 28px
+  &__btn
+    padding-right: 70px
+    padding-left: 70px
+  &__haracteristic
+    display: flex
+    margin-bottom: 25px
+    &-item
+      position: relative
+      margin-right: 30px
+      padding-left: 50px
+      &:last-child
+        margin-right: 0
+      svg
+        position: absolute
+        left: 0
+        top: 0
+        +size(40px)
+        fill: rgba(#fff, 0.2)
+      p
+        margin: 0
+        font-size: 18px
+        font-weight: 700
+        line-height: 1.3
+  &__quality
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 30px
+    &-item
+      margin-right: 20px
+      margin-bottom: 10px
+      padding: 10px 25px
+      border: 1px solid #fff
+      color: #fff
+      border-radius: 10px
+      &:last-child
+        margin-right: 0
+      &--purple
+        background-image: linear-gradient(to right, $purple-heart, $electric-violet)
+        border-color: transparent
+  &__content
+    margin-bottom: 20px
+    line-height: 1.7
+    p
+      &:last-child
+        margin-bottom: 0
+  &__statistic
+    h3
+      margin-bottom: 25px
+      font-size: 24px
+      font-weight: 700
+    &-list
+      display: flex
+    &-item
+      padding: 10px 15px
+      background-color: rgba(#fff, 0.1)
+      border-radius: 10px
+      margin-right: 10px
+      &:last-child
+        margin-right: 0
+      b
+        line-height: 1
+        font-size: 24px
+        font-weight: 700
+        text-transform: uppercase
+        span
+          font-size: 18px
+      p
+        line-height: 1
+        margin: 0
+        color: $gray
+
++media-breakpoint-down(lg)
+  .product
+    padding-top: 200px
+
++media-breakpoint-down(md)
+  .product
+    &__haracteristic
+      flex-direction: column
+      &-item
+        margin-right: 0
+        margin-bottom: 15px
+        &:last-child
+          margin-bottom: 0
+    &__statistic
+      h3
+        font-size: 20px
+      &-list
+        flex-wrap: wrap
+      &-item
+        width: 48%
+        margin-bottom: 10px
+        &:nth-child(2n)
+          margin-right: 0
+
++media-breakpoint-down(sm)
+  .product
+    &__wrap
+      flex-direction: column
+    &__left
+      width: auto
+      padding: 0
+      margin-bottom: 20px
+
++media-breakpoint-down(xs)
+  .product
+    padding-top: 130px
+    &__haracteristic
+      &-item
+        p
+          font-size: 16px
+    &__quality
+      &-item
+        padding: 10px
