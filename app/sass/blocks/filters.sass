@@ -39,14 +39,21 @@
   position: fixed
   top: 50%
   right: 0
-  background: $thunder
+  background-color: $thunder
   border: 0
   padding: 10px
   z-index: 10
   border-radius: 5px 0 0 5px
+  cursor: pointer
+  +transition
   svg
     fill: rgba(#fff, 0.5)
     +size(20px)
+    +transition
+  &:hover
+    background-color: $mine-shaft-2
+    svg
+      fill: rgba(#fff, 0.9)
   &:focus
     outline: none
 
@@ -74,17 +81,22 @@
       padding: 0
       background: none
       border: 0
+      cursor: pointer
       &::before, &::after
         content: ''
         display: block
         height: 2px
         width: 100%
         background-color: $accent
+        +transition
       &::before
         transform: rotate(45deg)
       &::after
         margin-top: -2px
         transform: rotate(-45deg)
+      &:hover
+        &::before, &::after
+          background-color: lighten($accent, 15%)
       &:focus
         outline: none
     &__item
