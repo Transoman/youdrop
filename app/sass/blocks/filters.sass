@@ -31,3 +31,67 @@
     margin-bottom: 40px
   &__btn
     width: 100%
+  &__close
+    display: none
+
+.btn-filter
+  display: none
+  position: fixed
+  top: 50%
+  right: 0
+  background: $thunder
+  border: 0
+  padding: 10px
+  z-index: 10
+  border-radius: 5px 0 0 5px
+  svg
+    fill: rgba(#fff, 0.5)
+    +size(20px)
+  &:focus
+    outline: none
+
++media-breakpoint-down(md)
+  .filters
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    width: 290px
+    padding: 40px 15px
+    background: #212121
+    z-index: 10
+    overflow-y: auto
+    transform: translateX(100%)
+    +transition
+    &.active
+      transform: translateX(0)
+    &__close
+      position: absolute
+      right: 20px
+      top: 20px
+      display: block
+      +size(25px)
+      padding: 0
+      background: none
+      border: 0
+      &::before, &::after
+        content: ''
+        display: block
+        height: 2px
+        width: 100%
+        background-color: $accent
+      &::before
+        transform: rotate(45deg)
+      &::after
+        margin-top: -2px
+        transform: rotate(-45deg)
+      &:focus
+        outline: none
+    &__item
+      &--price
+        .form-group
+          .form__field:last-child
+            margin-right: 5px
+
+  .btn-filter
+    display: block

@@ -1,0 +1,47 @@
+.pagination
+  text-align: center
+  &__link
+    display: inline-block
+    vertical-align: middle
+    padding: 0 15px
+    font-size: 20px
+    color: rgba(#fff, 0.25)
+    +transition
+    &:hover
+      color: #fff
+    &:last-child
+      margin-right: 0
+  &__dot
+    &:hover
+      color: rgba(#fff, 0.25)
+  &__current
+    color: #fff
+  &__prev, &__next
+    display: inline-block
+    vertical-align: middle
+    +size(40px)
+    padding-top: 1px
+    border: 1px solid rgba(#fff, 0.25)
+    border-radius: 50%
+    &:hover
+      // background-image: linear-gradient($crimson, $paprika)
+      background-color: $crimson
+      box-shadow: inset 0 -3px 3px rgba(#000, 0.15), 0 4px 30px rgba($accent, 0.7)
+      border-color: transparent
+      svg
+        fill: #fff
+    svg
+      +size(6px, 12px)
+      fill: rgba(#fff, 0.25)
+      +transition
+  &__prev
+    svg
+      transform: rotate(180deg)
+
++media-breakpoint-down(xs)
+  .pagination
+    &__link
+      font-size: 18px
+      padding: 0 10px
+    &__prev, &__next
+      +size(35px)

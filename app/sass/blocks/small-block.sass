@@ -55,3 +55,37 @@
 
 .jspHorizontalBar
   display: none
+
+// nouislider
+.noUi-target
+  height: 6px
+  background: rgba(#fff, 0.05)
+  border: 0
+  box-shadow: none
+
+.noUi-connect
+  background: $accent
+
+.noUi-horizontal
+  .noUi-handle
+    top: -5px
+    +size(16px)
+    border-radius: 50%
+    background: linear-gradient($crimson 50%, $paprika 100%)
+    border: 0
+    box-shadow: 0 4px 30px rgba($accent, 0.7)
+    cursor: pointer
+    +transition
+    &::before, &::after
+      display: none
+    &:hover
+      transform: scale(1.1)
+    &:focus
+      outline: none
+
+html:not([dir=rtl]) .noUi-horizontal .noUi-handle
+  right: -8px
+
++media-breakpoint-down(md)
+  .sorting
+    margin-bottom: 15px

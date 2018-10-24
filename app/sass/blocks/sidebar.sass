@@ -1,5 +1,11 @@
 .sidebar
   &__title
-    margin-bottom: 30px
+    margin-bottom: 15px
     font-size: 24px
     font-weight: 400
+
++media-breakpoint-down(md)
+  .sidebar
+    &__title
+      &--filter
+        display: none

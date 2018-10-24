@@ -3,11 +3,19 @@
     <h2 class="section-title" data-title="Marketplace">Торговая площадка</h2>
 
     <div class="row">
-      <div class="col-lg-3">
+
+      <div class="col-lg-4 col-xl-3">
         <aside class="sidebar">
-          <h3 class="sidebar__title">Фильтры</h3>
+          <h3 class="sidebar__title sidebar__title--filter">Фильтры</h3>
+
+          <button class="btn-filter">
+            <svg>
+              <use xlink:href="img/icon/symbols.svg#icon-filter"></use>
+            </svg>
+          </button>
 
           <form class="filters form">
+            <button class="filters__close" type="button"></button>
             <fieldset class="filters__item filters__item--price">
               <legend class="filters__title">Стоимость</legend>
               <div class="form-group">
@@ -135,7 +143,180 @@
           </form>
         </aside>
       </div>
-      <div class="col-lg-9"></div>
+
+      <div class="col-lg-8 col-xl-9">
+        <div class="row shop__top">
+
+          <div class="col-md-5 col-xl-4">
+            <form class="form sorting">
+              <div class="form__select-wrap">
+                <select name="sorting" class="form__select">
+                  <option value="popular">По популярности</option>
+                </select>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-md-6 offset-md-1 col-xl-5 offset-xl-3">
+            <form class="form search">
+              <div class="form-group">
+                <input type="search" class="form__field form__field--search" name="s" placeholder="Поиск по наименованию">
+                <button type="submit" class="search__btn">
+                  <svg>
+                    <use xlink:href="img/icon/symbols.svg#icon-search"></use>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+        <!-- /.shop__top -->
+
+        <div class="case-card shop__products row">
+
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 case-card__item case-card__item--yellow">
+            <a href="#" class="case-card__inner">
+              <div class="case-card__img-wrap">
+                <img src="img/content/weapon/kerambit.png" alt="">
+              </div>
+              <p>Karambit</p>
+              <b>Murder</b>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 case-card__item case-card__item--yellow">
+            <a href="#" class="case-card__inner">
+              <div class="case-card__img-wrap">
+                <img src="img/content/weapon/kerambit.png" alt="">
+              </div>
+              <p>Karambit</p>
+              <b>Murder</b>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 case-card__item case-card__item--yellow">
+            <a href="#" class="case-card__inner">
+              <div class="case-card__img-wrap">
+                <img src="img/content/weapon/kerambit.png" alt="">
+              </div>
+              <p>Karambit</p>
+              <b>Murder</b>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 case-card__item case-card__item--yellow">
+            <a href="#" class="case-card__inner">
+              <div class="case-card__img-wrap">
+                <img src="img/content/weapon/kerambit.png" alt="">
+              </div>
+              <p>Karambit</p>
+              <b>Murder</b>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 case-card__item case-card__item--red">
+            <a href="#" class="case-card__inner">
+              <div class="case-card__img-wrap">
+                <img src="img/content/weapon/m4a1-big.png" alt="">
+              </div>
+              <p>M4A1-S</p>
+              <b>Hyper Beast</b>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 case-card__item case-card__item--red">
+            <a href="#" class="case-card__inner">
+              <div class="case-card__img-wrap">
+                <img src="img/content/weapon/m4a1-big.png" alt="">
+              </div>
+              <p>M4A1-S</p>
+              <b>Hyper Beast</b>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 case-card__item case-card__item--red">
+            <a href="#" class="case-card__inner">
+              <div class="case-card__img-wrap">
+                <img src="img/content/weapon/m4a1-big.png" alt="">
+              </div>
+              <p>M4A1-S</p>
+              <b>Hyper Beast</b>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 case-card__item case-card__item--red">
+            <a href="#" class="case-card__inner">
+              <div class="case-card__img-wrap">
+                <img src="img/content/weapon/m4a1-big.png" alt="">
+              </div>
+              <p>M4A1-S</p>
+              <b>Hyper Beast</b>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 case-card__item case-card__item--pink">
+            <a href="#" class="case-card__inner">
+              <div class="case-card__img-wrap">
+                <img src="img/content/weapon/usp-2-big.png" alt="">
+              </div>
+              <p>USP-S</p>
+              <b>Cyrex</b>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 case-card__item case-card__item--pink">
+            <a href="#" class="case-card__inner">
+              <div class="case-card__img-wrap">
+                <img src="img/content/weapon/usp-2-big.png" alt="">
+              </div>
+              <p>USP-S</p>
+              <b>Cyrex</b>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 case-card__item case-card__item--pink">
+            <a href="#" class="case-card__inner">
+              <div class="case-card__img-wrap">
+                <img src="img/content/weapon/usp-2-big.png" alt="">
+              </div>
+              <p>USP-S</p>
+              <b>Cyrex</b>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 case-card__item case-card__item--pink">
+            <a href="#" class="case-card__inner">
+              <div class="case-card__img-wrap">
+                <img src="img/content/weapon/usp-2-big.png" alt="">
+              </div>
+              <p>USP-S</p>
+              <b>Cyrex</b>
+            </a>
+          </div>
+
+        </div>
+        <!-- /.case-card -->
+
+        <div class="pagination">
+          <a href="#" class="pagination__link pagination__prev">
+            <svg>
+              <use xlink:href="img/icon/symbols.svg#icon-arrow-next"></use>
+            </svg>
+          </a>
+          <span class="pagination__link pagination__current">1</span>
+          <a href="#" class="pagination__link">2</a>
+          <a href="#" class="pagination__link">3</a>
+          <span class="pagination__link pagination__dot">...</span>
+          <a href="#" class="pagination__link">10</a>
+          <a href="#" class="pagination__link pagination__next">
+            <svg>
+              <use xlink:href="img/icon/symbols.svg#icon-arrow-next"></use>
+            </svg>
+          </a>
+        </div>
+
+      </div>
     </div>
 
   </div>

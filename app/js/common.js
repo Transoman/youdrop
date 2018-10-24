@@ -19,6 +19,16 @@ jQuery(document).ready(function($) {
     }
   });
 
+  $('.btn-filter').click(function(e) {
+    e.preventDefault();
+    $('.filters').toggleClass('active');
+  });
+
+  $('.filters__close').click(function(e) {
+    e.preventDefault();
+    $('.filters').removeClass('active');
+  });
+
   $('.drophistory__item').mouseover(function(e){
     var offset = $(this).offset().left - 25;
 
@@ -115,6 +125,29 @@ jQuery(document).ready(function($) {
   readMore();
 
   $('.how-tabs').tabslet();
+
+  function hideStickerSelect() {
+    var radio = $('input[name=sticker]');
+    var radioAny = $('#sticker-any');
+    var selectHide = $('select[name=sticker_type]').parent();
+
+    function checkRadio() {
+      if (radioAny.prop('checked')) {
+        selectHide.hide();
+      }
+      else {
+        selectHide.show();
+      }
+    }
+
+    checkRadio();
+
+    radio.change(function(event) {
+      checkRadio();
+    });
+  }
+
+  hideStickerSelect();
 
   if ($('.filters__price')) {
     var sliderPrice = document.getElementById('filters__price');
