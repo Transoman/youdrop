@@ -71,7 +71,28 @@ jQuery(document).ready(function($) {
     $(this).select();
   });
 
-   $('.inventory-modal').popup();
+  $('.inventory-modal').popup();
+
+  $('.game-menu__toggle').click(function(e) {
+    e.preventDefault();
+    $('.game-menu').toggleClass('active');
+  });
+
+  //  document.onwheel = function(e) {
+  //   console.log(e);
+  //   if (e.target.className != 'game-menu__list') return;
+  //   var area = e.target;
+
+  //   var delta = e.deltaY || e.detail || e.wheelDelta;
+
+  //   if (delta < 0 && area.scrollTop == 0) {
+  //     e.preventDefault();
+  //   }
+
+  //   if (delta > 0 && area.scrollHeight - area.clientHeight - area.scrollTop <= 1) {
+  //     e.preventDefault();
+  //   }
+  // };
 
   function readMore() {
     var elem = $('.terms__wrap');

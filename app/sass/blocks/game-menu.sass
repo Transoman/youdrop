@@ -1,0 +1,110 @@
+.game-menu
+  position: fixed
+  left: 0
+  width: 270px
+  height: calc(100% - 95px)
+  top: 95px
+  z-index: 10
+  overflow: hidden
+  +transition
+  // 
+  // 
+  // 
+  &__list
+    // position: absolute
+    // top: 0
+    // bottom: 0
+    // left: 0
+    // right: -17px
+    overflow-y: scroll
+    height: 100%
+    -ms-overflow-style: none
+    // overflow: -moz-scrollbars-none
+    overflow-y: -moz-hidden-unscrollable
+    &::-webkit-scrollbar
+      display: none
+  &.active
+    width: 70px
+    .game-menu
+      &__group
+        padding-left: 0
+        &::before
+          width: 3px
+      &__item
+        svg
+          margin-right: 20px
+  &__toggle
+    background-color: rgba($mine-shaft-2, 0.75)
+    border: 0
+    color: #fff
+  &__group
+    position: relative
+    padding-left: 20px
+    +transition
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      width: 20px
+      +transition
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      text-align: center
+      transform: rotate(-90deg) translate(-50%, -100%)
+      transform-origin: 0 0
+      font-size: 12px
+      font-weight: 700
+      color: $silver
+    &--pvp
+      &::before
+        background-color: $monza
+      &::after
+        content: 'PvP'
+    &--pve
+      &::before
+        background-color: $blue-ribbon
+      &::after
+        content: 'PvE'
+    &--solo-pve
+      &::before
+        background-color: $la-palma
+      &::after
+        content: 'Solo PvE'
+  &__item
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 15px 20px
+    border-bottom: 1px solid $tundora
+    background-color: rgba($mine-shaft-2, 0.75)
+    svg
+      flex-shrink: 0
+      +size(30px)
+      margin-right: 10px
+      fill: #fff
+      +transition
+    &:hover
+      background-image: linear-gradient(to right, rgba($cerulean, 1), rgba($blue-ribbon, 1))
+      color: #fff
+  &__body
+    flex: 1 1
+    min-width: 130px
+  &__title
+    display: block
+    font-size: 18px
+    font-weight: 700
+    line-height: 1
+  &__status
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &-title
+      font-size: 12px
+      color: $silver-2
+    &-value
+      font-size: 12px
+      color: $havelock-blue
