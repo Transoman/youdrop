@@ -1,0 +1,63 @@
+.widget
+  margin-bottom: 30px
+  border-radius: 10px
+  overflow: hidden
+  &__top
+    padding: 15px 20px 10px
+    background-image: linear-gradient(to right, $violet-red, $purple-heart)
+    color: $titan-white
+    p
+      margin: 0
+    b
+      font-size: 20px
+      text-transform: uppercase
+      line-height: 1
+  &__user
+    padding: 50px 15px
+    background: $mine-shaft-2 url('../img/widget-bg.jpg') no-repeat center / cover
+    text-align: center
+    img
+      +size(170px)
+      border-radius: 50%
+  &__bottom
+    padding: 15px 20px 15px
+    background-image: linear-gradient(to right, $violet-red, $purple-heart)
+    color: $titan-white
+    &-row
+      display: flex
+      justify-content: space-between
+      margin-bottom: 5px
+      &:last-child
+        margin-bottom: 0
+  &--lucky-day
+    .widget
+      &__top, &__bottom
+        background-image: linear-gradient(to right, $havelock-blue, $royal-blue)
+      &__user
+        background-image: url('../img/widget-lucky-bg.jpg')
+  &--big-bet
+    .widget
+      &__top, &__bottom
+        background-image: linear-gradient(to right, $sushi, $olive-drab)
+      &__user
+        background-image: url('../img/widget-bet-bg.jpg')
+
++media-breakpoint-down(md)
+  .widgetbar
+    display: flex
+    align-items: flex-start
+    flex-wrap: wrap
+  .widget
+    width: 31.5%
+    margin-right: 15px
+    &:last-child
+      margin-right: 0
+
++media-breakpoint-down(sm)
+  .widget
+    width: 47%
+
++media-breakpoint-down(xs)
+  .widget
+    width: 100%
+    margin-right: 0
