@@ -2,27 +2,12 @@
   position: fixed
   left: 0
   width: 270px
-  height: calc(100% - 95px)
-  top: 95px
+  height: calc(100% - 125px)
+  top: 125px
   z-index: 10
-  overflow: hidden
   +transition
-  // 
-  // 
-  // 
   &__list
-    // position: absolute
-    // top: 0
-    // bottom: 0
-    // left: 0
-    // right: -17px
-    overflow-y: scroll
-    height: 100%
-    -ms-overflow-style: none
-    // overflow: -moz-scrollbars-none
-    overflow-y: -moz-hidden-unscrollable
-    &::-webkit-scrollbar
-      display: none
+    +transition
   &.active
     width: 70px
     .game-menu
@@ -30,17 +15,42 @@
         padding-left: 0
         &::before
           width: 3px
+      &__list
+        transform: translateX(0)
       &__item
         svg
           margin-right: 20px
-  &__toggle
-    background-color: rgba($mine-shaft-2, 0.75)
+  &-toggle
+    position: fixed
+    left: 0
+    top: 95px
+    padding: 0
+    background-color: $mine-shaft-2
     border: 0
-    color: #fff
+    +size(270px, 30px)
+    cursor: pointer
+    z-index: 11
+    +transition
+    svg
+      position: relative
+      +size(15px)
+      fill: rgba(#fff, 0.5)
+      transform: rotate(180deg)
+      +transition
+    &:hover
+      svg
+        fill: rgba(#fff, 0.9)
+    &:focus
+      outline: none
+    &.active
+      width: 70px
+      svg
+        transform: rotate(0)
   &__group
     position: relative
     padding-left: 20px
     +transition
+    overflow: hidden
     &::before
       content: ''
       position: absolute
@@ -78,7 +88,7 @@
     display: flex
     justify-content: space-between
     align-items: center
-    padding: 15px 20px
+    padding: 14px 20px
     border-bottom: 1px solid $tundora
     background-color: rgba($mine-shaft-2, 0.75)
     svg
@@ -108,3 +118,16 @@
     &-value
       font-size: 12px
       color: $havelock-blue
+  .simplebar-track.vertical, .simplebar-scrollbar
+    width: 0
+
++media-breakpoint-down(lg)
+  .game-menu
+    top: 230px
+    height: calc(100% - 230px)
+    &.active
+      .game-menu
+        &__list
+          transform: translateX(-100%)
+    &-toggle
+      top: 200px

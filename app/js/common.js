@@ -73,26 +73,11 @@ jQuery(document).ready(function($) {
 
   $('.inventory-modal').popup();
 
-  $('.game-menu__toggle').click(function(e) {
+  $('.game-menu-toggle').click(function(e) {
     e.preventDefault();
+    $(this).toggleClass('active');
     $('.game-menu').toggleClass('active');
   });
-
-  //  document.onwheel = function(e) {
-  //   console.log(e);
-  //   if (e.target.className != 'game-menu__list') return;
-  //   var area = e.target;
-
-  //   var delta = e.deltaY || e.detail || e.wheelDelta;
-
-  //   if (delta < 0 && area.scrollTop == 0) {
-  //     e.preventDefault();
-  //   }
-
-  //   if (delta > 0 && area.scrollHeight - area.clientHeight - area.scrollTop <= 1) {
-  //     e.preventDefault();
-  //   }
-  // };
 
   function readMore() {
     var elem = $('.terms__wrap');
@@ -170,7 +155,8 @@ jQuery(document).ready(function($) {
 
   hideStickerSelect();
 
-  if ($('.filters__price').length) {
+  if ($('#filters__price').length) {
+    console.log('work');
     var sliderPrice = document.getElementById('filters__price');
 
     var minInput = document.querySelector('.form__field[name=price_from]');
