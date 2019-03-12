@@ -89,6 +89,233 @@
   &__img-wrap
     img
       +transition
+  &__row
+    display: flex
+  &__balance
+    font-size: 20px
+    font-weight: 700
+    color: #fff
+    &-currency
+      font-size: 12px
+      text-transform: uppercase
+    &-row
+      margin: 0
+      color: #979899
+  &__info
+    padding: 20px 20px 30px 30px
+    h4
+      margin-bottom: 20px
+      font-size: 20px
+      font-weight: 700
+      span
+        color: $golden-dream
+    &-top
+      display: flex
+      align-items: center
+      height: 62px
+      padding: 15px 20px 15px 30px
+      background-color: #282828
+      box-shadow: inset 5px 0 20px rgba(#000, 0.3)
+      border-radius: 0 10px 0 0
+      .btn
+        margin-left: auto
+    &-bottom
+      padding: 15px 30px 40px
+      background-color: #282828
+      border-radius: 0 0 10px 0
+      p
+        margin-bottom: 5px
+        color: #979899
+        font-weight: 600
+      .inventory-modal
+        &__balance
+          display: block
+          margin-bottom: 10px
+          font-size: 40px
+          font-weight: 400
+          &-currency
+            font-size: 20px
+  &__withdraw
+    position: absolute
+    left: 0
+    bottom: 0
+    padding: 0 5px
+    border: 1px solid rgba(#fff, 0.25)
+    border-radius: 3px
+    font-size: 11px
+    font-weight: 500
+    color: rgba(#fff, 0.25)
+    z-index: 1
+    &:hover
+      border-color: rgba(#fff, 1)
+  &__close
+    background: none
+    border: none
+    cursor: pointer
+    svg
+      width: 14px
+      height: 14px
+      fill: $forest-green
+    &:focus
+      outline: none
+  &__meta
+    padding: 25px 30px 10px
+    h2
+      margin-bottom: 20px
+      font-size: 18px
+      font-weight: 900
+      color: $accent
+      text-transform: uppercase
+      span
+        font-weight: 400
+        color: #fff
+    &-right
+      flex-grow: 1
+    &-price
+      display: flex
+      align-items: center
+      &-label
+        font-size: 16px
+        font-weight: 500
+      &-price
+        width: 90px
+        margin-left: auto
+        margin-right: 10px
+        background-color: #262626
+        border: 0
+        border-radius: 3px
+        padding: 4px 10px
+        color: #fff
+        font-weight: 600
+        &:focus
+          outline: none
+      &-currency
+        font-size: 10px
+        font-weight: 700
+        color: #999999
+        text-transform: uppercase
+      &-val
+        min-width: 90px
+        margin-left: auto
+        padding: 0 10px
+        margin-right: 10px
+        font-size: 14px
+        font-weight: 600
+        color: #fff
+        white-space: nowrap
+    &-row
+      display: flex
+      margin-bottom: 25px
+    &-img
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 120px
+      height: 120px
+      margin-right: 30px
+      background-color: #262626
+    &-item
+      display: flex
+      justify-content: space-between
+      align-items: center
+      font-size: 12px
+    &-label
+      color: #999999
+    &-status
+      font-weight: 600
+      color: $cerulean
+    &-bottom
+      .inventory-modal__meta
+        &-item
+          align-items: flex-end
+        &-price-val
+          margin-left: auto
+          margin-right: 10px
+  &__comment
+    margin-bottom: 20px
+    input
+      width: 100%
+      background-color: #262626
+      border: 0
+      border-radius: 3px
+      padding: 4px 10px
+      color: #fff
+      font-weight: 600
+      text-align: center
+      &:focus
+        outline: none
+      &::placeholder
+        color: #fff
+  &__btn-row
+    margin-bottom: 35px
+    text-align: center
+    .btn
+      padding-right: 60px
+      padding-left: 60px
+  &--small
+    max-width: 470px
+  &--2-col
+    max-width: 970px
+    .inventory-modal
+      &__left
+        width: 570px
+        flex-shrink: 0
+      &__right
+        flex-grow: 1
+      &__top
+        padding-right: 25px
+        padding-left: 25px
+        border-radius: 10px 0 0 0
+    .form
+      .btn
+        padding-right: 60px
+        padding-left: 60px
+      &-row
+        margin-bottom: 30px
+        > *
+          margin-right: 25px
+          &:last-child
+            margin-right: 0
+      &-group
+        margin-bottom: 0
+      &__field
+        width: 90px
+        padding-right: 10px
+        padding-left: 10px
+        background-color: #282828
+        border-radius: 3px
+        font-weight: 600
+        margin-right: 5px
+      &__label
+        font-size: 10px
+        font-weight: 700
+        color: #999999
+        text-transform: uppercase
+      svg
+        width: 6px
+        height: 10px
+        margin-top: 10px
+        fill: $golden-dream
+
+
++media-breakpoint-down(md)
+  .inventory-modal
+    &--2-col
+      .form-row
+        justify-content: center
+      .inventory-modal
+        &__row
+          flex-direction: column
+        &__left
+          width: auto
+    &__info
+      text-align: center
+      &-top
+        height: auto
+    &__info-bottom
+      padding-right: 20px
+      padding-left: 20px
+      text-align: center
 
 +media-breakpoint-down(sm)
   .inventory-modal
@@ -99,3 +326,13 @@
   .inventory-modal
     &__item
       width: 50%
+    &__info-top
+      flex-direction: column
+      align-items: flex-start
+      .btn
+        margin: 10px 0 0
+    &__meta
+      &-row
+        flex-direction: column
+      &-img
+        margin: 0 auto 30px
